@@ -1,0 +1,108 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f4f7f1;
+  color: #1f2a1c;
+}
+
+header {
+  background: #2f6b2f;
+  color: #fff;
+  text-align: center;
+  padding: 24px 16px;
+}
+header h1 { margin: 0; font-size: 2rem; }
+header p  { margin: 4px 0 0; opacity: 0.9; }
+
+main { max-width: 760px; margin: 24px auto; padding: 0 16px; }
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.card h2 { margin-top: 0; font-size: 1.2rem; color: #2f6b2f; }
+.hint { color: #667; margin-top: -6px; }
+
+/* Symptom picture cards */
+#symptom-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+.symptom {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #dfe6da;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.symptom:hover { border-color: #9bc49b; transform: translateY(-2px); }
+.symptom img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #eef3ea;
+}
+.symptom-text {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+.symptom input { margin-top: 3px; transform: scale(1.2); flex-shrink: 0; }
+
+/* Highlight the whole card when it is checked */
+.symptom:has(input:checked) { border-color: #2f6b2f; background: #eef7ea; }
+
+/* Buttons */
+.actions { margin-top: 16px; display: flex; gap: 10px; }
+button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #2f6b2f;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover { background: #245524; }
+button.secondary { background: #e3e9df; color: #1f2a1c; }
+
+.error { color: #b3261e; }
+
+/* Results */
+.result {
+  border: 1px solid #dfe6da;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.result.top { border: 2px solid #2f6b2f; background: #f6fbf3; }
+.result h3 { margin: 0 0 4px; }
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: #e3e9df;
+  margin-right: 6px;
+}
+.bar { height: 10px; background: #e3e9df; border-radius: 99px; margin: 10px 0 4px; overflow: hidden; }
+.bar span { display: block; height: 100%; background: #2f6b2f; }
+.result ul { margin: 6px 0; padding-left: 20px; }
+.matched li { color: #2f6b2f; }
+.missing li { color: #888; }
+.advice { background: #fff8e1; padding: 10px; border-radius: 8px; margin-top: 10px; }
+
+#history li { margin-bottom: 4px; }
+
+footer { text-align: center; color: #667; font-size: 0.85rem; padding: 20px; }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PalayCheck –  Rice Disease Expert System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Group 6 -PalayCheck</h1>
+    <p>Rice Disease &amp; Pest Expert System</p>
+  </header>
+
+  <main>
+    <!-- STEP 1: user picks symptoms -->
+    <section class="card">
+      <h2>1. What do you see in your rice field?</h2>
+      <p class="hint">Check all symptoms that apply.</p>
+      <div id="symptom-list">Loading symptoms…</div>
+      <div class="actions">
+        <button id="diagnose-btn">Diagnose</button>
+        <button id="clear-btn" class="secondary">Clear</button>
+      </div>
+      <p id="error" class="error"></p>
+    </section>
+
+    <!-- STEP 2: system shows results -->
+    <section class="card" id="results-card" hidden>
+      <h2>2. Diagnosis</h2>
+      <div id="results"></div>
+    </section>
+
+    <!-- History -->
+    <section class="card">
+      <h2>Recent consultations</h2>
+      <ul id="history"></ul>
+    </section>
+  </main>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
